@@ -10,6 +10,9 @@
   <link href="css/custom-bootstrap.css" rel="stylesheet">
   <link href="css/header.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
+  <link href="css/effects.css" rel="stylesheet" />
+  <link href="css/pricing-table.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
@@ -18,16 +21,16 @@
 
   <!-- Hero Section -->
   <section class="hero-section container">
-    <img src="./images/image1.png" alt="Market Data Graphic">
-    <h1>Invest In Your Market Data</h1>
-    <p>Access real-time Options, Equities, and APIs built for traders and businesses that need speed and reliability.</p>
-    <a href="#" class="btn btn-primary">Get started</a>
+    <img src="./images/image1.png" alt="Market Data Graphic" data-aos="zoom-in" data-aos-duration="700">
+    <h1 data-aos="fade-up" data-aos-delay="100">Invest In Your Market Data</h1>
+    <p data-aos="fade-up" data-aos-delay="200">Access real-time Options, Equities, and APIs built for traders and businesses that need speed and reliability.</p>
+    <a href="#" class="btn btn-primary" data-aos="fade-up" data-aos-delay="300">Get started</a>
   </section>
 
   <!-- Feature Cards -->
   <section class="feature-cards container text-center">
     <div class="row g-4">
-      <div class="col-lg-4 col-md-6 col-12">
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
         <div class="feature-card">
           <i class="fas fa-chart-line fa-2x mb-3"></i>
           <h5>Real-time Market Data</h5>
@@ -35,7 +38,7 @@
           <a href="#" class="btn btn-primary">Explore Data</a>
         </div>
       </div>
-      <div class="col-lg-4 col-md-6 col-12">
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
         <div class="feature-card">
           <i class="fas fa-chart-pie fa-2x mb-3"></i>
           <h5>Advanced Analytics</h5>
@@ -43,7 +46,7 @@
           <a href="#" class="btn btn-primary">See Insights</a>
         </div>
       </div>
-      <div class="col-lg-4 col-md-6 col-12">
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
         <div class="feature-card">
           <i class="fas fa-tachometer-alt fa-2x mb-3"></i>
           <h5>Custom Dashboards</h5>
@@ -54,6 +57,19 @@
     </div>
   </section>
 
+  <?php include __DIR__ . '/partials/partners.php'; ?>
+  <?php include __DIR__ . '/partials/option-data.php'; ?>
+  <?php include __DIR__ . '/partials/stocks-data.php'; ?>
+  <?php include __DIR__ . '/partials/indices-data.php'; ?>
+  <?php include __DIR__ . '/partials/footer.php'; ?>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true, // Whether animation should happen only once - while scrolling down
+      duration: 600, // values from 0 to 3000, with step 50ms
+    });
+  </script>
 </body>
 </html>
