@@ -87,7 +87,7 @@ function render_indices_feature_item($text, $link, $plan) {
         </div>
         
         <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="300">
-            <a href="#pricing" class="btn btn-primary btn-lg custom-pricing-btn">Pricing</a>
+            <a href="pages/pricing.php" class="btn btn-primary btn-lg custom-pricing-btn">Pricing</a>
         </div>
     </div>
 </section>

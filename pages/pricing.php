@@ -164,7 +164,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
     </style>
 </head>
 <body>
-<?php include __DIR__ . '/../partials/header.php'; ?>
 
 <div class="container py-5">
     <header class="pricing-header mb-5">
@@ -331,7 +330,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
     <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.96-4.96z"/>
   </symbol>
 </svg>
-<?php include __DIR__ . '/../partials/footer.php'; ?>
 </body>
 </html>/partials/footer.php'; ?>
 </body>
