@@ -32,26 +32,26 @@
     <div class="row g-4">
       <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
         <div class="feature-card">
-          <i class="fas fa-chart-line fa-2x mb-3"></i>
-          <h5>Real-time Market Data</h5>
-          <p>Get ultra-low latency data feeds for equities, options, and futures, designed for trading strategies that rely on speed.</p>
-          <a href="#" class="btn btn-primary">Explore Data</a>
+          <i class="fas fa-bolt fa-2x mb-3"></i>
+          <h5>Real-time Access</h5>
+          <p>Get ultra-low latency data feeds for equities, options, and futures.</p>
+          <a href="pages/pricing.php" class="btn btn-primary">Get Access</a>
         </div>
       </div>
       <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
         <div class="feature-card">
-          <i class="fas fa-chart-pie fa-2x mb-3"></i>
-          <h5>Advanced Analytics</h5>
-          <p>Analyze order flow, liquidity, and volatility with automated tools that give you a competitive edge in fast markets.</p>
-          <a href="#" class="btn btn-primary">See Insights</a>
+          <i class="fas fa-file-invoice-dollar fa-2x mb-3"></i>
+          <h5>Quote at Trade</h5>
+          <p>Analyze order flow, liquidity, and volatility with our powerful tools.</p>
+          <a href="pages/commercial-use.php" class="btn btn-primary">Learn More</a>
         </div>
       </div>
       <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
         <div class="feature-card">
-          <i class="fas fa-tachometer-alt fa-2x mb-3"></i>
-          <h5>Custom Dashboards</h5>
-          <p>Visualize your KPIs, build interactive dashboards, and track price movements—all in one powerful platform.</p>
-          <a href="#" class="btn btn-primary">Build Dashboard</a>
+          <i class="fas fa-users fa-2x mb-3"></i>
+          <h5>Community Support</h5>
+          <p>Join our community of traders and get the support you need.</p>
+          <a href="pages/blog.php" class="btn btn-primary">Join Us</a>
         </div>
       </div>
     </div>
@@ -61,14 +61,15 @@
   <?php include __DIR__ . '/partials/option-data.php'; ?>
   <?php include __DIR__ . '/partials/stocks-data.php'; ?>
   <?php include __DIR__ . '/partials/indices-data.php'; ?>
+
   <?php include __DIR__ . '/partials/footer.php'; ?>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init({
-      once: true, // Whether animation should happen only once - while scrolling down
-      duration: 600, // values from 0 to 3000, with step 50ms
+      once: true, 
+      duration: 600, 
     });
   </script>
 </body>

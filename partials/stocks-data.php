@@ -41,7 +41,7 @@ function render_stock_feature_item($text, $link, $plan) {
 }
 ?>
 
-<section class="stocks-data-pricing py-5 bg-light">
+<section id="stocks-pricing" class="stocks-data-pricing py-5 bg-light">
     <div class="container options-data-pricing" style="padding-top: 0; border-top: none;">
         <header class="text-center mb-5 stocks-header" data-aos="fade-up">
             <h1 class="display-5 fw-bold">Stocks Data</h1>

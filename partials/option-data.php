@@ -53,7 +53,7 @@ function render_feature_item($text, $link, $plan) {
 }
 ?>
 
-<section class="options-data-pricing">
+<section id="options-pricing" class="options-data-pricing">
     <div class="container">
         <header class="text-center mb-5 options-header" data-aos="fade-up">
             <h1 class="display-5 fw-bold">Options Data</h1>

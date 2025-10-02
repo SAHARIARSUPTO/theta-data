@@ -36,11 +36,11 @@ function render_indices_feature_item($text, $link, $plan) {
 }
 ?>
 
-<section class="indices-data-pricing py-5 bg-white">
+<section id="indices-pricing" class="indices-data-pricing py-5 bg-white">
     <div class="container options-data-pricing" style="padding-top: 0; border-top: none;">
         <header class="text-center mb-5" data-aos="fade-up">
             <h1 class="display-5 fw-bold mb-2">
-                Indices Data <span class="badge bg-info new-badge ms-2">New</span>
+                Indices Data
             </h1>
             <p class="lead text-dark">Every Tick. Every Move. Real-Time.</p>
         </header>
