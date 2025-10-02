@@ -3,7 +3,7 @@
     <div class="container">
       <!-- Brand -->
       <a class="navbar-brand d-flex align-items-center" href="/">
-        <img src="./images/Logo.jpg" alt="ThetaData Logo" height="32">
+        <img src="/images/Logo.png" alt="ThetaData Logo" height="32">
       </a>
 
       <!-- Mobile Toggler -->
