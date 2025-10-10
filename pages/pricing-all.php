@@ -1,6 +1,36 @@
 <?php
 // --- 1. PHP Data Structure (same as before) ---
 $plans = [
+    'Options' => [
+        'monthly' => [
+            'Value' => [
+                'price' => 40, 'description' => 'Best for beginners.', 
+                'features' => ['100% market coverage', 'US index & stock options', 'Real-time access', 'Unlimited requests', '3 Request types', '4 Years of data', 'Low latency snapshots', 'API Support', '1 minute intervals']
+            ],
+            'Standard' => [
+                'price' => 80, 'description' => 'Best for research.', 
+                'features' => ['100% market coverage', 'US index & stock options', 'Real-time access', 'Unlimited requests', '7 Request types', '8 Years of data', 'Low latency snapshots', 'API Support', 'Tick level data', 'Option Chain Snapshots', '15K Trade streams', '10K Quote streams']
+            ],
+            'Pro' => [
+                'price' => 160, 'description' => 'Best for live trading.', 
+                'features' => ['100% market coverage', 'US index & stock options', 'Real-time access', 'Unlimited requests', '12 Request types', '12 Years of data', 'Low latency snapshots', 'API Support', 'Tick level data', 'Option Root Snapshots', 'Stream every option trade', '15K Quote streams']
+            ],
+        ],
+        'annual' => [
+            'Value' => [
+                'price' => 32, 'description' => 'Best for beginners.', 
+                'features' => ['100% market coverage', 'US index & stock options', 'Real-time access', 'Unlimited requests', '3 Request types', '4 Years of data', 'Low latency snapshots', 'API Support', '1 minute intervals']
+            ],
+            'Standard' => [
+                'price' => 64, 'description' => 'Best for research.', 
+                'features' => ['100% market coverage', 'US index & stock options', 'Real-time access', 'Unlimited requests', '7 Request types', '8 Years of data', 'Low latency snapshots', 'API Support', 'Tick level data', 'Option Chain Snapshots', '15K Trade streams', '10K Quote streams']
+            ],
+            'Pro' => [
+                'price' => 128, 'description' => 'Best for live trading.', 
+                'features' => ['100% market coverage', 'US index & stock options', 'Real-time access', 'Unlimited requests', '12 Request types', '12 Years of data', 'Low latency snapshots', 'API Support', 'Tick level data', 'Option Root Snapshots', 'Stream every option trade', '15K Quote streams']
+            ],
+        ],
+    ],
     'Stocks' => [
         'monthly' => [
             'Value' => [
@@ -58,36 +88,6 @@ $plans = [
             'Pro' => [
                 'price' => 80, 'description' => 'Best for live trading.', 
                 'features' => ['6500 historic symbols', 'Real-time SPX & VIX', 'Unlimited requests', '2 Request types', '7 Years of data', 'Low latency snapshots', 'API Support', 'Tick level data', 'Snapshots', '100 Price streams']
-            ],
-        ],
-    ],
-    'Options' => [
-        'monthly' => [
-            'Value' => [
-                'price' => 40, 'description' => 'Best for beginners.', 
-                'features' => ['100% market coverage', 'US index & stock options', 'Real-time access', 'Unlimited requests', '3 Request types', '4 Years of data', 'Low latency snapshots', 'API Support', '1 minute intervals']
-            ],
-            'Standard' => [
-                'price' => 80, 'description' => 'Best for research.', 
-                'features' => ['100% market coverage', 'US index & stock options', 'Real-time access', 'Unlimited requests', '7 Request types', '8 Years of data', 'Low latency snapshots', 'API Support', 'Tick level data', 'Option Chain Snapshots', '15K Trade streams', '10K Quote streams']
-            ],
-            'Pro' => [
-                'price' => 160, 'description' => 'Best for live trading.', 
-                'features' => ['100% market coverage', 'US index & stock options', 'Real-time access', 'Unlimited requests', '12 Request types', '12 Years of data', 'Low latency snapshots', 'API Support', 'Tick level data', 'Option Root Snapshots', 'Stream every option trade', '15K Quote streams']
-            ],
-        ],
-        'annual' => [
-            'Value' => [
-                'price' => 32, 'description' => 'Best for beginners.', 
-                'features' => ['100% market coverage', 'US index & stock options', 'Real-time access', 'Unlimited requests', '3 Request types', '4 Years of data', 'Low latency snapshots', 'API Support', '1 minute intervals']
-            ],
-            'Standard' => [
-                'price' => 64, 'description' => 'Best for research.', 
-                'features' => ['100% market coverage', 'US index & stock options', 'Real-time access', 'Unlimited requests', '7 Request types', '8 Years of data', 'Low latency snapshots', 'API Support', 'Tick level data', 'Option Chain Snapshots', '15K Trade streams', '10K Quote streams']
-            ],
-            'Pro' => [
-                'price' => 128, 'description' => 'Best for live trading.', 
-                'features' => ['100% market coverage', 'US index & stock options', 'Real-time access', 'Unlimited requests', '12 Request types', '12 Years of data', 'Low latency snapshots', 'API Support', 'Tick level data', 'Option Root Snapshots', 'Stream every option trade', '15K Quote streams']
             ],
         ],
     ],
@@ -190,11 +190,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                 
                 <?php foreach (array_keys($modes['monthly']) as $planName): ?>
                     <div class="col">
-                        <div class="pricing-card h-100 mb-4 rounded-3 <?= ($planName === 'Standard') ? 'border-primary' : '' ?>">
+                        <div class="pricing-card mb-4 rounded-3 <?= ($planName === 'Standard') ? 'border-primary' : '' ?>">
                             <div class="card-header">
                                 <h4 class="card-title"><?= $planName ?></h4>
                             </div>
-                            <div class="card-body d-flex flex-column">
+                            <div class="card-body">
                                 <p class="text-muted"><?= $modes['monthly'][$planName]['description'] ?></p>
 
                                 <div class="price mb-3">
@@ -206,7 +206,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                                     </span>
                                 </div>
                                 
-                                <ul class="list-unstyled mt-3 mb-4 text-start mx-3" style="flex-grow: 1;">
+                                <ul class="list-unstyled mt-3 mb-4 text-start mx-3">
                                     <?php 
                                     $features = $modes['monthly'][$planName]['features'];
                                     foreach ($features as $feature): ?>
@@ -322,6 +322,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
   </symbol>
 </svg>
 </body>
-</html>
+</html><?php //include '../partials/footer.php'; ?>
 </body>
 </html>

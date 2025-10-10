@@ -1,3 +1,0 @@
-Edit me the blog page based on the design. Setup mysql database, the blogs,photo,who posts,date etc will be posted from admin panel and show it in blog.php
-
-also setup a goood looking login page for admin only and set me up everything regarding this.

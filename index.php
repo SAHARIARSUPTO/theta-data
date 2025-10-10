@@ -59,8 +59,8 @@
 
   <?php include __DIR__ . '/partials/partners.php'; ?>
   <?php include __DIR__ . '/partials/data-statistics.php'; ?>
-  <?php include __DIR__ . '/partials/option-data.php'; ?>
   <?php include __DIR__ . '/partials/stocks-data.php'; ?>
+  <?php include __DIR__ . '/partials/option-data.php'; ?>
   <?php include __DIR__ . '/partials/indices-data.php'; ?>
 
   <?php include __DIR__ . '/partials/footer.php'; ?>
