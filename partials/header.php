@@ -19,7 +19,7 @@
           <li class="nav-item"><a class="nav-link px-3" href="#"><i class="fas fa-book"></i> Docs</a></li>
           <li class="nav-item"><a class="nav-link px-3" href="#"><i class="fab fa-discord"></i> Discord</a></li>
           <li class="nav-item"><a class="nav-link px-3" href="#"><i class="fas fa-download"></i> Downloads</a></li>
-          <li class="nav-item"><a class="nav-link px-3" href="#"><i class="fas fa-blog"></i> Blog</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="blog/dist"><i class="fas fa-blog"></i> Blog</a></li>
           <li class="nav-item"><a class="nav-link px-3" href="#"><i class="fas fa-briefcase"></i> Careers</a></li>
         </ul>
         <a href="<?php echo BASE_URL; ?>pages/signup.php" class="btn btn-get-started">Signup</a>

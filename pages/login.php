@@ -33,11 +33,26 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.1) !important;
       background-color: #fff !important;
     }
+
+    .text-center p {
+      color: #6c757d;
+    }
+
+    .footer-links {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .footer-links a {
+      color: #6c757d;
+      text-decoration: none;
+      font-size: 0.9rem;
+      margin: 0 10px;
+    }
   </style>
 </head>
 <body>
 
-<?php require_once('../partials/header.php'); ?>
 
   <div class="login-container">
     <div class="login-card">
@@ -53,18 +68,10 @@
         </div>
         <button type="submit" class="btn btn-login w-100 text-white">Log In</button>
       </form>
-      <div class="text-center mt-3">
-        <p>Don't have an account? <a href="<?php echo BASE_URL; ?>pages/signup.php">Sign Up</a></p>
-      </div>
-      <div class="footer-links">
-        <a href="<?php echo BASE_URL; ?>pages/privacy-policy.php">Privacy Policy</a>
-        <a href="<?php echo BASE_URL; ?>pages/terms-and-conditions.php">Terms & Conditions</a>
-        <a href="<?php echo BASE_URL; ?>pages/subscriber-agreement.php">Agreement</a>
-      </div>
+     
     </div>
   </div>
 
-<?php require_once('../partials/footer.php'); ?>
 
 </body>
 </html>

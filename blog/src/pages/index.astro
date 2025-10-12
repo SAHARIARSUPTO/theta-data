@@ -1,0 +1,14 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const posts = await Astro.glob('./posts/*.md');
+---
+<BaseLayout pageTitle="Blog">
+  {posts.map((post) => (
+    <article>
+      <h2>{post.frontmatter.title}</h2>
+      <p>By {post.frontmatter.author} on {post.frontmatter.date}</p>
+      <post.Content />
+    </article>
+  ))}
+</BaseLayout>

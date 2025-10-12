@@ -168,16 +168,3 @@ body {
         padding: 4rem;
     }
 }
-
-/* ---------------- Login & Signup Pages ---------------- */
-.btn-login, .btn-signup {
-    background-color: var(--td-primary);
-    border: none;
-    transition: 0.3s;
-    padding: 12px;
-    font-weight: 600;
-}
-
-.btn-login:hover, .btn-signup:hover {
-    background-color: #009f7d;
-}

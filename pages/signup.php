@@ -41,16 +41,6 @@
       box-shadow: none;
       background: #fff;
     }
-    .btn-signup {
-      background-color: var(--td-primary);
-      border: none;
-      transition: 0.3s;
-      padding: 12px;
-      font-weight: 600;
-    }
-    .btn-signup:hover {
-      background-color: #009f7d;
-    }
     .footer-links {
       text-align: center;
       margin-top: 20px;
