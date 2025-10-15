@@ -4,7 +4,7 @@
     <div class="container">
       <!-- Brand -->
       <a class="navbar-brand d-flex align-items-center" href="<?php echo BASE_URL; ?>">
-        <img src="<?php echo BASE_URL; ?>images/Logo.png" alt="ThetaData Logo" height="32">
+        <img src="./images/Logo.png" alt="ThetaData Logo" height="32">
       </a>
 
       <!-- Mobile Toggler -->

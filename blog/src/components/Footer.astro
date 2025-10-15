@@ -1,0 +1,38 @@
+---
+const today = new Date();
+---
+<footer>
+  <div class="footer-content">
+    <p>&copy; {today.getFullYear()} ThetaData. All rights reserved.</p>
+    <div class="social-links">
+      <a href="https://x.com/theta_data">Twitter</a>
+      <a href="https://www.facebook.com/profile.php?id=100084005288417#">Facebook</a>
+      <a href="https://www.linkedin.com/company/axiomx-theta-data/?viewAsMember=true" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+<style>
+  footer {
+    padding: 2em 1em;
+    margin-top: 4em;
+    border-top: 1px solid rgb(var(--gray-light));
+    text-align: center;
+  }
+  .footer-content {
+    max-width: 720px;
+    margin: auto;
+  }
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin-top: 1em;
+  }
+  .social-links a {
+    text-decoration: none;
+    color: rgb(var(--gray));
+  }
+  .social-links a:hover {
+    color: var(--accent);
+  }
+</style>
