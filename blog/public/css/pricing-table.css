@@ -1,0 +1,129 @@
+/* -------------------------------------------------------- */
+/* Options Data Pricing Table Styles
+/* -------------------------------------------------------- */
+
+.options-data-pricing {
+  background-color: transparent;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  border-top: 1px solid #e9ecef;
+}
+
+/* Header Styling */
+.options-header h1 {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.options-header p {
+  color: #555;
+  font-size: 1.1rem;
+}
+
+.options-header .header-links a {
+  color: var(--td-primary) !important;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.options-header .header-links a:hover {
+  text-decoration: underline !important;
+  opacity: 0.8;
+}
+
+/* Plan Card Styling */
+.plan-card {
+  background-color: #fff;
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.plan-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.plan-title {
+  font-weight: 600;
+  font-size: 1.4rem;
+  border-bottom: 1px solid #e9ecef;
+  padding-bottom: 1rem;
+}
+
+.plan-icon {
+  display: block;
+  font-size: 1.8rem;
+  margin-bottom: 0.75rem;
+  color: var(--td-primary);
+}
+
+.plan-title small {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #6c757d;
+  margin-top: 4px;
+}
+
+/* Feature Item Styling */
+.feature-item {
+  color: #333;
+  font-size: 0.9rem;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.feature-icon-check {
+  color: #a0aec0; /* A subtle gray for the checkmark */
+  font-size: 0.75rem;
+  width: 16px; /* Ensures alignment */
+  text-align: center;
+  margin-right: 8px;
+  transition: color 0.2s ease;
+}
+.feature-item:hover {
+  background-color: #f1f3f5; /* Use --td-bg for hover */
+}
+
+.feature-tag {
+  padding: 3px 8px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  border-radius: 5px;
+  min-width: 40px;
+  text-align: center;
+  color: white !important;
+}
+
+.feature-tag.bg-success {
+  background-color: var(--td-primary) !important; /* Use brand color */
+}
+.feature-tag.bg-warning {
+  background-color: #f0ad4e !important; /* A nice orange for 'STR' */
+}
+
+/* Pricing Button */
+.custom-pricing-btn {
+  background: var(--td-primary);
+  border: none;
+  border-radius: 25px;
+  padding: 0.8rem 2rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.custom-pricing-btn:hover {
+  background: #009f7d;
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991.98px) {
+  .plan-card {
+    min-height: auto;
+  }
+}

@@ -1,0 +1,15 @@
+/* ---------------- Background Effects ---------------- */
+
+.light-grid-background {
+  /* 
+    This adds a subtle grid pattern on top of the existing body background color.
+    It uses two linear gradients to draw 1px lines with very low opacity.
+  */
+  background-image: linear-gradient(
+      to right,
+      rgba(17, 17, 17, 0.05) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(17, 17, 17, 0.05) 1px, transparent 1px);
+  background-size: 20px 40px; /* The size of the grid squares */
+}

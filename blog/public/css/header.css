@@ -1,0 +1,66 @@
+/* Wrapper */
+
+/* Clean Navbar */
+.navbar-clean {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Brand */
+.header-wrapper .navbar-clean .navbar-brand {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111;
+}
+
+/* Nav Links */
+.header-wrapper .navbar-clean .nav-link {
+  color: #444;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+.header-wrapper .navbar-clean .nav-link:hover {
+  color: #000;
+}
+.header-wrapper .navbar-clean .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 0%;
+  height: 2px;
+  background: #00c49a;
+  transition: width 0.3s ease;
+}
+.header-wrapper .navbar-clean .nav-link:hover::after {
+  width: 100%;
+}
+
+/* Signup Button */
+.header-wrapper .btn-get-started {
+  background: #00c49a;
+  color: white;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 0.5rem 1.2rem;
+  transition: all 0.3s ease;
+}
+.header-wrapper .btn-get-started:hover {
+  background: #00a982;
+  transform: translateY(-2px);
+}
+
+/* Mobile Toggler */
+.navbar-toggler {
+  border: none;
+}
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(17, 17, 17, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}

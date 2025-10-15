@@ -1,0 +1,259 @@
+/* -------------------------------------------------------- */
+/* New Pricing Page Styles
+/* -------------------------------------------------------- */
+
+:root {
+  --td-primary: #00c49a;
+  --td-bg: #f1f3f5;
+  --td-dark: #111;
+  --td-light-gray: #f8f9fa;
+  --td-white: #ffffff;
+  --td-border-color: #e9ecef;
+}
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+  background-color: var(--td-bg);
+  color: var(--td-dark);
+}
+
+.pricing-header {
+  text-align: center;
+  padding: 4rem 0 2rem;
+  animation: fadeInDown 1s ease-out;
+}
+
+.pricing-header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--td-dark);
+}
+
+.pricing-header p {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.nav-tabs .nav-link {
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: #555;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.nav-tabs .nav-link.active {
+  color: var(--td-primary);
+  border-bottom-color: var(--td-primary);
+}
+
+.price-toggle {
+  animation: fadeInUp 1s ease-out;
+}
+
+.price-toggle .btn {
+  border-radius: 20px;
+  font-weight: 600;
+  padding: 0.5rem 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.price-toggle .btn.active {
+  background-color: var(--td-primary) !important;
+  color: var(--td-white) !important;
+  box-shadow: 0 4px 10px rgba(0, 196, 154, 0.3);
+}
+
+.pricing-card {
+  background: var(--td-white);
+  border: 1px solid var(--td-border-color);
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  animation: zoomIn 0.8s ease-out;
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-card.border-primary {
+  border-color: var(--td-primary);
+  box-shadow: 0 10px 20px rgba(0, 196, 154, 0.2);
+}
+
+.pricing-card .card-header {
+  background: transparent;
+  border-bottom: none;
+  padding: 0;
+}
+
+.pricing-card .card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--td-dark);
+}
+
+.pricing-card .card-body {
+  padding: 0;
+}
+
+.pricing-card .price {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--td-primary);
+  margin: 1.5rem 0;
+  transition: transform 0.3s ease;
+}
+
+.pricing-card:hover .price {
+  transform: scale(1.05);
+}
+
+.pricing-card .price small {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #777;
+}
+
+.pricing-card .list-unstyled {
+  margin-bottom: 2rem;
+}
+
+.pricing-card .list-unstyled li {
+  font-size: 0.95rem;
+  color: #555;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--td-light-gray);
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.pricing-card .list-unstyled li:hover {
+  background-color: var(--td-light-gray);
+}
+
+.pricing-card .list-unstyled li svg {
+  color: var(--td-primary);
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.pricing-card .btn-primary {
+  background: var(--td-primary);
+  border: none;
+  border-radius: 25px;
+  padding: 0.8rem 2rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.pricing-card .btn-primary:hover {
+  background: #009f7d;
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.subscription-form {
+  background: var(--td-white);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Carousel Styles */
+.carousel-item {
+  text-align: center;
+}
+
+.carousel-indicators {
+  bottom: -50px;
+}
+
+.carousel-indicators button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ddd;
+  border: none;
+}
+
+.carousel-indicators .active {
+  background-color: var(--td-primary);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+  opacity: 0.8;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: var(--td-primary);
+  border-radius: 50%;
+  padding: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 991.98px) {
+  .pricing-card {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .pricing-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    display: none; /* Hide controls on mobile, rely on swipe */
+  }
+
+  .carousel-indicators {
+    bottom: -30px;
+  }
+}
