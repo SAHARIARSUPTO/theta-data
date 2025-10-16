@@ -4,56 +4,406 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Careers | Theta Data</title>
-    <link rel="stylesheet" href="/css/careers.css" />
+
+    <!-- Bootstrap & Icons (same as homepage) -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      crossorigin="anonymous"
+    />
+
+    <!-- Reusable site CSS (header/footer already exist in repository) -->
+    <link href="../css/custom-bootstrap.css" rel="stylesheet" />
+    <link href="../css/header.css" rel="stylesheet" />
+
+    <style>
+      /* Reusable page utility styles (move to shared CSS if desired) */
+      .td-hero {
+        padding: 3.5rem 0;
+        background: linear-gradient(180deg, #f7fafb 0%, #ffffff 100%);
+        text-align: center;
+      }
+      .td-hero h1 {
+        font-size: 2rem;
+        font-weight: 800;
+        margin-bottom: 0.5rem;
+      }
+      .td-hero p.lead {
+        color: #444;
+        max-width: 720px;
+        margin: 0.5rem auto 0;
+      }
+
+      .career-container {
+        padding: 3rem 0 5rem;
+      }
+
+      .card-career {
+        border: 1px solid #e9ecef;
+        border-radius: 12px;
+        box-shadow: 0 6px 18px rgba(38, 57, 84, 0.06);
+        padding: 1.25rem;
+        background: #fff;
+      }
+
+      .job-card {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .job-title {
+        font-weight: 800;
+        font-size: 1.25rem;
+      }
+
+      .job-location {
+        color: #6c757d;
+        font-size: 0.95rem;
+      }
+
+      .apply .btn-apply {
+        background: #00c49a;
+        border: 1px solid #00c49a;
+        color: #0b2230;
+        font-weight: 700;
+      }
+      .apply .btn-apply:hover {
+        background: #00a37e;
+        border-color: #00a37e;
+      }
+
+      .about,
+      .openings,
+      .apply,
+      .equal-opportunity {
+        margin-bottom: 1.75rem;
+      }
+
+      /* Responsive layout */
+      @media (min-width: 992px) {
+        .career-grid {
+          display: grid;
+          grid-template-columns: 1fr 420px;
+          gap: 2rem;
+          align-items: start;
+        }
+      }
+
+      /* Mobile vertical centering for single job card area */
+      @media (max-width: 767.98px) {
+        .td-hero {
+          padding: 2.25rem 1rem;
+        }
+        .td-hero h1 {
+          font-size: 1.5rem;
+        }
+        .career-container {
+          padding: 1.5rem 1rem 3rem;
+        }
+        .card-career {
+          padding: 1rem;
+        }
+      }
+
+      /* Footer override small tweaks */
+      .site-footer .footer-content {
+        max-width: 720px;
+      }
+    </style>
   </head>
+
   <body>
-    <header class="header">
-      <h1 class="title">Careers</h1>
-    </header>
-    <main class="main-content">
-      <section class="about">
-        <h2 class="section-title">About Theta Data</h2>
-        <p>
-          Theta Data is a rapidly growing company founded in 2022 by Bailey
-          Danseglio. Our mission is to provide the world with efficient access
-          to stock, options, and index data, in a format that is easy to consume
-          and analyze. We believe that exchange data should be available to
-          everyone, not just firms with big bank accounts. Theta Data’s market
-          data service delivers stock, options, and index data to any server or
-          desktop through an easy-to-use REST API, or real-time data via
-          WebSockets. Come join us in bringing market data to all!
-        </p>
-      </section>
-      <section class="openings">
-        <h2 class="section-title">Current Openings</h2>
-        <div class="job-card">
-          <h3 class="job-title">Data Center Engineer</h3>
-          <p class="job-location">30 Minutes from Weehawken, New Jersey</p>
-        </div>
-      </section>
-      <section class="apply">
-        <h2 class="section-title">To Apply</h2>
-        <p>
-          Please submit your resume and cover letter to
+    <!-- Header (copied from index.html) -->
+    <div class="header-wrapper">
+      <nav class="navbar navbar-expand-lg navbar-clean">
+        <div class="container">
           <a
-            href="mailto:bill@thetadata.net?subject=[Job Application]: Data Center Engineer"
-            >bill@thetadata.net</a
+            class="navbar-brand d-flex align-items-center"
+            href="../index.html"
           >
-          with a subject of: <strong>[Job Application]: Job Title</strong>
+            <img src="../images/Logo.png" alt="ThetaData Logo" height="32" />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarContent"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link px-3" href="pricing-all.html"
+                  ><i class="fas fa-dollar-sign"></i> Pricing</a
+                >
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link px-3"
+                  href="#"
+                  id="docsDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <i class="fas fa-book"></i> Docs
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="docsDropdown">
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="https://docs.thetadata.us/Articles/Getting-Started/Getting-Started.html"
+                      target="_blank"
+                    >
+                      V3 Docs
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="https://http-docs.thetadata.us/Articles/Getting-Started/Getting-Started.html"
+                      target="_blank"
+                    >
+                      V2 Docs
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link px-3" href="https://discord.thetadata.us/"
+                  ><i class="fab fa-discord"></i> Discord</a
+                >
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link px-3"
+                  href="#"
+                  id="downloadsDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <i class="fas fa-download"></i> Downloads
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="downloadsDropdown">
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="https://download-unstable.thetadata.us/ThetaTerminalv3.jar"
+                      target="_blank"
+                    >
+                      V3 Terminal
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="https://download-stable.thetadata.us/"
+                      target="_blank"
+                    >
+                      V2 Terminal
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link px-3" href="../blog/dist"
+                  ><i class="fas fa-blog"></i> Blog</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link px-3" href="careers.html"
+                  ><i class="fas fa-briefcase"></i> Careers</a
+                >
+              </li>
+            </ul>
+            <a href="signup.html" class="btn btn-get-started">Signup</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Hero -->
+    <section class="td-hero">
+      <div class="container">
+        <h1>Careers at Theta Data</h1>
+        <p class="lead">
+          Join our team building fast, reliable market data access for everyone.
         </p>
-      </section>
-      <section class="equal-opportunity">
-        <h2 class="section-title">Equal Opportunity Employer</h2>
-        <p>
-          We are an equal opportunity employer. We do not discriminate on the
-          basis of race, religion, color, national origin, gender, sexual
-          orientation, age, marital status, veteran status, or disability
-          status.
-        </p>
-      </section>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <main class="career-container">
+      <div class="container">
+        <div class="career-grid">
+          <div>
+            <section class="about card-career mb-4">
+              <h2 class="section-title h5">About Theta Data</h2>
+              <p class="mb-0">
+                Theta Data is a rapidly growing company founded in 2022 by
+                Bailey Danseglio. Our mission is to provide the world with
+                efficient access to stock, options, and index data, in a format
+                that is easy to consume and analyze. We believe that exchange
+                data should be available to everyone, not just firms with big
+                bank accounts. Theta Data’s market data service delivers stock,
+                options, and index data to any server or desktop through an
+                easy-to-use REST API, or real-time data via WebSockets. Come
+                join us in bringing market data to all!
+              </p>
+            </section>
+
+            <section class="apply card-career">
+              <h2 class="section-title h5">To Apply</h2>
+              <p class="mb-3">
+                Please submit your resume and cover letter to
+                <a
+                  href="mailto:bill@thetadata.net?subject=[Job Application]: Data Center Engineer"
+                  >bill@thetadata.net</a
+                >
+                with a subject of: <strong>[Job Application]: Job Title</strong>
+              </p>
+              <div class="d-flex">
+                <a
+                  href="mailto:bill@thetadata.net?subject=[Job Application]: Data Center Engineer"
+                  class="btn btn-apply btn-apply w-100 btn-apply"
+                  role="button"
+                  >Apply: Data Center Engineer</a
+                >
+              </div>
+            </section>
+
+            <section class="equal-opportunity card-career mt-4">
+              <h2 class="section-title h5">Equal Opportunity Employer</h2>
+              <p class="mb-0">
+                We are an equal opportunity employer. We do not discriminate on
+                the basis of race, religion, color, national origin, gender,
+                sexual orientation, age, marital status, veteran status, or
+                disability status.
+              </p>
+            </section>
+          </div>
+
+          <aside>
+            <section class="openings card-career">
+              <h2 class="section-title h5">Current Openings</h2>
+
+              <div class="job-card mt-3">
+                <div class="d-flex align-items-start justify-content-between">
+                  <div>
+                    <h3 class="job-title mb-0">Data Center Engineer</h3>
+                    <p class="job-location mb-0">
+                      30 Minutes from Weehawken, New Jersey
+                    </p>
+                  </div>
+                </div>
+
+                <hr />
+
+                <p class="mb-2">
+                  We are looking for a hands-on engineer to support our hardware
+                  and network infrastructure, maintain uptime, and assist with
+                  deployments. Candidates should be comfortable working in a
+                  mixed on-prem/cloud environment.
+                </p>
+
+                <ul class="list-unstyled mb-3">
+                  <li>Hands-on server & networking experience</li>
+                  <li>Familiarity with Linux systems administration</li>
+                  <li>Ability to respond to incidents & on-call rotation</li>
+                </ul>
+
+                <a
+                  href="mailto:bill@thetadata.net?subject=[Job Application]: Data Center Engineer"
+                  class="btn btn-outline-primary w-100"
+                  >Apply</a
+                >
+              </div>
+            </section>
+          </aside>
+        </div>
+      </div>
     </main>
-    <footer class="footer">
-      <p>&copy; 2025 Theta Data. All rights reserved.</p>
+
+    <!-- Footer (copied from index.html) -->
+    <footer class="site-footer py-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 text-center footer-content">
+            <div class="social-icons mb-4">
+              <a
+                href="https://www.instagram.com/theta.data/"
+                class="social-link mx-2"
+                aria-label="Instagram"
+              >
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a
+                href="https://m.facebook.com/Theta-Data-106395478825243/"
+                class="social-link mx-2"
+                aria-label="Facebook"
+              >
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+              <a
+                href="https://twitter.com/theta_data"
+                class="social-link mx-2"
+                aria-label="Twitter"
+              >
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/company/axiomx-theta-data/?viewAsMember=true"
+                class="social-link mx-2"
+                aria-label="Linkedin"
+              >
+                <i class="fa-brands fa-linkedin"></i>
+              </a>
+            </div>
+            <p class="copyright-text mb-1">
+              Axonix LLC Theta Data &copy;2020-<span id="footer-year"></span>
+            </p>
+            <p class="contact-info mb-1">
+              <a href="mailto:support@thetadata.net" class="footer-link"
+                >support@thetadata.net</a
+              >
+            </p>
+            <p class="contact-info mb-4">
+              Market Data Emergency (646)-875-8005
+            </p>
+            <div class="utility-links d-flex flex-column align-items-center">
+              <a
+                href="pages/terms-and-conditions.html"
+                class="footer-link-underline mb-1"
+              >
+                Terms & Conditions
+              </a>
+              <a
+                href="pages/privacy-policy.html"
+                class="footer-link-underline mb-1"
+              >
+                Privacy Policy
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
+
+    <script>
+      // set footer year
+      (function () {
+        const el = document.getElementById("footer-year");
+        if (el) el.textContent = new Date().getFullYear();
+      })();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
