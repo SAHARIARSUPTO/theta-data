@@ -57,6 +57,16 @@ body {
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
 }
 
+/* Disable hero image animation when .no-animation is applied */
+.hero-section img.no-animation,
+.no-animation {
+  animation: none !important;
+  -webkit-animation: none !important;
+  transform: none !important;
+  -webkit-transform: none !important;
+  opacity: 1 !important;
+}
+
 /* ---------------- Feature Cards ---------------- */
 .feature-cards {
   padding: 2rem 0;

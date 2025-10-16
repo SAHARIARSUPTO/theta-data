@@ -114,6 +114,79 @@
       .site-footer .footer-content {
         max-width: 720px;
       }
+
+      :root {
+        --footer-bg: #f8f8f8;
+        --footer-text: #6c757d;
+        --footer-icon: #868e96;
+      }
+
+      .site-footer {
+        background-color: var(--footer-bg);
+        color: var(--footer-text);
+        padding: 2.5rem 0;
+      }
+
+      .footer-content {
+        max-width: 920px;
+        margin: 0 auto;
+      }
+
+      .social-icons {
+        margin-bottom: 0.75rem;
+      }
+
+      .social-link {
+        color: var(--footer-icon);
+        font-size: 1.6rem;
+        display: inline-block;
+        margin: 0 0.5rem;
+        transition: color 0.15s ease;
+      }
+
+      .social-link:hover {
+        color: #495057;
+        text-decoration: none;
+      }
+
+      .copyright-text,
+      .contact-info {
+        font-size: 0.95rem;
+        margin: 0.15rem 0;
+      }
+
+      .footer-link {
+        color: var(--footer-text);
+        text-decoration: none;
+      }
+      .footer-link:hover {
+        color: #495057;
+        text-decoration: underline;
+      }
+
+      .footer-link-underline {
+        color: var(--footer-text);
+        font-size: 0.95rem;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
+      .footer-link-underline:hover {
+        color: #495057;
+      }
+
+      @media (max-width: 575.98px) {
+        .site-footer {
+          padding: 2rem 0;
+        }
+        .social-link {
+          font-size: 1.4rem;
+          margin: 0 0.4rem;
+        }
+        .footer-content {
+          padding: 0 12px;
+        }
+      }
     </style>
   </head>
 
@@ -331,63 +404,64 @@
       </div>
     </main>
 
-    <!-- Footer (copied from index.html) -->
-    <footer class="site-footer py-5">
+    <!-- Footer (aligned with index.html look) -->
+    <footer class="site-footer">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-12 text-center footer-content">
-            <div class="social-icons mb-4">
+            <div class="social-icons mb-3">
               <a
                 href="https://www.instagram.com/theta.data/"
-                class="social-link mx-2"
+                class="social-link"
                 aria-label="Instagram"
               >
-                <i class="fa-brands fa-instagram"></i>
+                <i class="fab fa-instagram"></i>
               </a>
               <a
                 href="https://m.facebook.com/Theta-Data-106395478825243/"
-                class="social-link mx-2"
+                class="social-link"
                 aria-label="Facebook"
               >
-                <i class="fa-brands fa-facebook"></i>
+                <i class="fab fa-facebook"></i>
               </a>
               <a
                 href="https://twitter.com/theta_data"
-                class="social-link mx-2"
+                class="social-link"
                 aria-label="Twitter"
               >
-                <i class="fa-brands fa-twitter"></i>
+                <i class="fab fa-twitter"></i>
               </a>
               <a
                 href="https://www.linkedin.com/company/axiomx-theta-data/?viewAsMember=true"
-                class="social-link mx-2"
+                class="social-link"
                 aria-label="Linkedin"
               >
-                <i class="fa-brands fa-linkedin"></i>
+                <i class="fab fa-linkedin"></i>
               </a>
             </div>
+
             <p class="copyright-text mb-1">
               Axonix LLC Theta Data &copy;2020-<span id="footer-year"></span>
             </p>
+
             <p class="contact-info mb-1">
               <a href="mailto:support@thetadata.net" class="footer-link"
                 >support@thetadata.net</a
               >
             </p>
-            <p class="contact-info mb-4">
+
+            <p class="contact-info mb-3">
               Market Data Emergency (646)-875-8005
             </p>
-            <div class="utility-links d-flex flex-column align-items-center">
+
+            <div class="utility-links d-flex justify-content-center gap-3">
               <a
                 href="pages/terms-and-conditions.html"
-                class="footer-link-underline mb-1"
+                class="footer-link-underline"
               >
-                Terms & Conditions
+                Terms &amp; Conditions
               </a>
-              <a
-                href="pages/privacy-policy.html"
-                class="footer-link-underline mb-1"
-              >
+              <a href="pages/privacy-policy.html" class="footer-link-underline">
                 Privacy Policy
               </a>
             </div>
@@ -397,7 +471,6 @@
     </footer>
 
     <script>
-      // set footer year
       (function () {
         const el = document.getElementById("footer-year");
         if (el) el.textContent = new Date().getFullYear();
