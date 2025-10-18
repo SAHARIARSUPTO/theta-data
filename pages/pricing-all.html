@@ -14,223 +14,16 @@
     />
     <link href="../css/custom-bootstrap.css" rel="stylesheet" />
     <link href="../css/header.css" rel="stylesheet" />
+    <link href="../css/sections.css" rel="stylesheet" />
+    <link href="../css/index.css" rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
       crossorigin="anonymous"
     />
     <link href="../css/effects.css" rel="stylesheet" />
-    <link href="css/pricing-table.css" rel="stylesheet" />
+    <link href="../css/pricing-table.css" rel="stylesheet" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <style>
-      /* --- CSS Variables for new primary color --- */
-      :root {
-        --primary-teal: #00c49a;
-        --primary-teal-dark: #00a37e;
-        --highlight-red: #dc3545;
-      }
-
-      /* --- Toggling Styles --- */
-      .price-mode-monthly,
-      .price-mode-annual {
-        display: none;
-      }
-      .price-mode-monthly.active,
-      .price-mode-annual.active {
-        display: inline;
-      }
-
-      /* --- Pricing Card Base Style (Height Consistency Focus) --- */
-      .pricing-card-new {
-        max-width: 350px;
-        min-width: 280px; /* Reduced min-width slightly for small mobile devices */
-        flex: 0 0 auto;
-        scroll-snap-align: center;
-        border: 1px solid #dee2e6;
-        border-radius: 10px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-        background-color: #ffffff;
-        transition: transform 0.3s, box-shadow 0.3s;
-
-        /* Enforce minimum card height for consistency */
-        min-height: 580px; /* A consistent height to accommodate varying list lengths */
-
-        display: flex; /* Flex container for internal layout */
-        flex-direction: column;
-      }
-
-      /* Highlighted Card (Standard) */
-      .pricing-card-new.highlight {
-        border: 2px solid var(--primary-teal);
-        transform: scale(1.05);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-      }
-
-      /* Header Styling (New Color) */
-      .card-header-new {
-        background-color: var(--primary-teal);
-        padding: 1.2rem 0; /* Reduced padding for mobile */
-        color: #212529;
-        font-weight: 700;
-        border-radius: 8px 8px 0 0;
-      }
-
-      .card-header-new h4 {
-        font-size: 1.5rem; /* Reduced font size for mobile */
-        margin-bottom: 0.25rem;
-        font-weight: 900;
-      }
-
-      .card-header-new p {
-        font-size: 0.8rem;
-        color: #343a40;
-        margin-bottom: 0;
-      }
-
-      /* Body and Price */
-      .card-body-new {
-        padding: 1.5rem 1rem; /* Reduced padding for mobile */
-        flex-grow: 1; /* Allows the body to take up remaining height */
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between; /* Pushes button to the bottom */
-      }
-
-      .card-price-new {
-        font-size: 2.5rem; /* Reduced font size for mobile */
-        font-weight: 900;
-        line-height: 1;
-        margin-bottom: 0.5rem;
-        color: #212529;
-      }
-
-      .card-price-new small {
-        font-size: 45%;
-        font-weight: 400;
-        color: #6c757d;
-      }
-
-      /* Feature List Styling */
-      .card-features-new {
-        list-style: none;
-        padding: 0;
-        margin-top: 1rem;
-        text-align: left;
-        flex-grow: 1; /* Critical: Allows feature list to expand for consistent card height */
-      }
-
-      .card-features-new li {
-        padding: 0.4rem 0; /* Reduced padding for mobile */
-        font-size: 0.9rem; /* Reduced font size for mobile */
-        border-bottom: 1px dashed #e9ecef;
-      }
-
-      .card-features-new li:last-child {
-        border-bottom: none;
-      }
-
-      .card-features-new svg {
-        color: var(--primary-teal); /* Green/Teal checkmark */
-        margin-right: 0.5rem;
-      }
-
-      /* POPULAR Ribbon Tag */
-      .popular-ribbon {
-        position: absolute;
-        top: 15px;
-        right: -30px;
-        padding: 2px 30px;
-        background-color: var(--highlight-red);
-        color: white;
-        font-weight: bold;
-        text-transform: uppercase;
-        font-size: 0.8rem;
-        transform: rotate(45deg);
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        z-index: 10;
-      }
-
-      /* Button Style (New Color) */
-      .btn-subscribe-new {
-        background-color: var(--primary-teal);
-        border-color: var(--primary-teal);
-        color: #212529;
-        font-weight: 700;
-        margin-top: 1rem;
-        padding: 0.75rem 0;
-      }
-      .btn-subscribe-new:hover {
-        background-color: var(--primary-teal-dark);
-        border-color: var(--primary-teal-dark);
-        color: #212529;
-      }
-
-      /* Tab/Pill Styling (New Color) - Perfect Gaping */
-      .nav-pills .nav-item {
-        padding: 0 5px; /* Added padding for better gaping */
-      }
-      .nav-pills .nav-link.active,
-      .nav-pills .show > .nav-link {
-        background-color: var(--primary-teal);
-        color: #fff; /* White text on primary background */
-        font-weight: 700;
-        border: 1px solid var(--primary-teal);
-      }
-      .nav-pills .nav-link {
-        color: #495057;
-        border: 1px solid #ced4da;
-        border-radius: 0.5rem;
-        transition: all 0.2s ease-in-out;
-      }
-
-      /* --- MOBILE SWIPEABLE LAYOUT (FOR PLANS: Value, Standard, Pro) --- */
-      .pricing-grid-swipeable {
-        display: flex;
-        gap: 1.5rem;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        padding-bottom: 1.5rem;
-        -webkit-overflow-scrolling: touch;
-        justify-content: flex-start;
-      }
-
-      .pricing-grid-swipeable::-webkit-scrollbar {
-        display: none;
-      }
-      .pricing-grid-swipeable {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-      }
-
-      /* Desktop Layout Overrides */
-      @media (min-width: 992px) {
-        .pricing-grid-swipeable {
-          justify-content: center;
-          overflow-x: hidden;
-        }
-        .pricing-card-new {
-          flex: 1 1 300px;
-          max-width: none;
-          transform: none !important;
-          min-height: 600px; /* Slightly taller for desktop readability */
-        }
-        .pricing-card-new.highlight {
-          transform: scale(1.02);
-        }
-        .card-header-new h4 {
-          font-size: 1.75rem; /* Larger font size for desktop */
-        }
-        .card-price-new {
-          font-size: 3.5rem; /* Larger font size for desktop */
-        }
-        .card-features-new li {
-          font-size: 1rem;
-        }
-      }
-    </style>
   </head>
   <body>
     <section>
@@ -457,8 +250,7 @@
 
       <div
         id="subscription-form-section"
-        class="row justify-content-center"
-        style="display: none"
+        class="row justify-content-center hidden"
       >
         <div class="col-lg-8">
           <div class="subscription-form">
@@ -530,7 +322,7 @@
       </div>
     </div>
 
-        <!-- Footer -->
+    <!-- Footer -->
     <footer class="site-footer py-5">
       <div class="container">
         <div class="row justify-content-center">
@@ -569,20 +361,22 @@
               Axonix LLC Theta Data &copy;2020-<span id="footer-year"></span>
             </p>
             <p class="contact-info mb-1">
-              <a href="mailto:support@thetadata.net" class="footer-link">support@thetadata.net</a>
+              <a href="mailto:support@thetadata.net" class="footer-link"
+                >support@thetadata.net</a
+              >
             </p>
             <p class="contact-info mb-4">
               Market Data Emergency (646)-875-8005
             </p>
             <div class="utility-links d-flex flex-column align-items-center">
               <a
-                href="pages/terms-and-conditions.html"
+                href="terms-and-conditions.html"
                 class="footer-link-underline mb-1"
               >
                 Terms & Conditions
               </a>
               <a
-                href="pages/privacy-policy.html"
+                href="privacy-policy.html"
                 class="footer-link-underline mb-1"
               >
                 Privacy Policy
@@ -592,96 +386,11 @@
         </div>
       </div>
     </footer>
-    <style>
-      :root {
-        --footer-bg: #f8f8f8;
-        --footer-text: #6c757d;
-        --footer-icon: #868e96;
-      }
 
-      .site-footer {
-        background-color: var(--footer-bg);
-        color: var(--footer-text);
-      }
 
-      .footer-content {
-        max-width: 400px;
-        margin: 0 auto;
-      }
-
-      /* Prevent underlines/underscores and remove inline-gap artifacts */
-      .site-footer a,
-      .site-footer a * {
-        text-decoration: none !important;
-      }
-
-      .social-icons {
-        /* keep icons vertically centered and remove any extra line height */
-        display: flex;
-        justify-content: center;
-        gap: 12px;
-        align-items: center;
-        line-height: 1;
-        margin-bottom: 0.5rem;
-      }
-
-      .social-link {
-        color: var(--footer-icon);
-        font-size: 1.8rem;
-        transition: color 0.3s ease;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 36px;
-        height: 36px;
-      }
-
-      .social-link:hover {
-        color: #495057;
-      }
-
-      .copyright-text,
-      .contact-info {
-        font-size: 0.9rem;
-        line-height: 1.5;
-      }
-
-      .footer-link {
-        color: var(--footer-text);
-        text-decoration: none;
-        transition: color 0.3s;
-      }
-
-      .footer-link:hover {
-        color: #495057;
-      }
-
-      .footer-link-underline {
-        color: var(--footer-text);
-        font-size: 0.9rem;
-        text-decoration: underline;
-        text-underline-offset: 3px;
-        transition: color 0.3s;
-      }
-
-      .footer-link-underline:hover {
-        color: #495057;
-      }
-
-      @media (max-width: 575.98px) {
-        .site-footer {
-          padding-top: 3rem !important;
-          padding-bottom: 3rem !important;
-        }
-        .social-link {
-          font-size: 1.5rem;
-          width: 32px;
-          height: 32px;
-        }
-      }
-    </style>
+    <!-- If your partial doesn't include the footer-year script, keep this block.
+         Otherwise you can remove it to avoid duplication. -->
     <script>
-      // set footer year
       (function () {
         const el = document.getElementById("footer-year");
         if (el) el.textContent = new Date().getFullYear();
@@ -1307,7 +1016,7 @@
       };
     </script>
     <!-- SVG Checkmark icon used in feature lists -->
-    <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+    <svg xmlns="http://www.w3.org/2000/svg" class="hidden">
       <symbol id="check" viewBox="0 0 16 16">
         <path
           d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.96-4.96z"

@@ -1,68 +1,166 @@
-body {
-  margin: 0;
-  background: #f8f9fa;
-  color: #222;
-}
-.header {
-  background: #fff;
-  padding: 2rem 1rem 1rem 1rem;
-  text-align: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-}
-.title {
-  margin: 0;
-  font-size: 2.5rem;
-  font-weight: 700;
-}
-.main-content {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-}
-.section-title {
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: #007bff;
-}
-.about,
-.openings,
-.apply,
-.equal-opportunity {
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  padding: 1.5rem;
-  margin-bottom: 2rem;
-}
-.job-card {
-  background: #f1f3f6;
-  border-radius: 6px;
-  padding: 1rem;
-  margin-top: 1rem;
-}
-.job-title {
-  font-size: 1.1rem;
-  font-weight: 500;
-  margin: 0 0 0.3rem 0;
-}
-.job-location {
-  font-size: 1rem;
-  color: #888;
-  margin-bottom: 0;
-}
-.footer {
-  text-align: center;
-  padding: 1.5rem 0;
-  background: #fff;
-  color: #888;
-  margin-top: 3rem;
-  font-size: 0.95rem;
-}
-a {
-  color: #007bff;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
+/* Reusable page utility styles (move to shared CSS if desired) */
+      .td-hero {
+        padding: 3.5rem 0;
+        background: linear-gradient(180deg, #f7fafb 0%, #ffffff 100%);
+        text-align: center;
+      }
+      .td-hero h1 {
+        font-size: 2rem;
+        font-weight: 800;
+        margin-bottom: 0.5rem;
+      }
+      .td-hero p.lead {
+        color: #444;
+        max-width: 720px;
+        margin: 0.5rem auto 0;
+      }
+
+      .career-container {
+        padding: 3rem 0 5rem;
+      }
+
+      .card-career {
+        border: 1px solid #e9ecef;
+        border-radius: 12px;
+        box-shadow: 0 6px 18px rgba(38, 57, 84, 0.06);
+        padding: 1.25rem;
+        background: #fff;
+      }
+
+      .job-card {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .job-title {
+        font-weight: 800;
+        font-size: 1.25rem;
+      }
+
+      .job-location {
+        color: #6c757d;
+        font-size: 0.95rem;
+      }
+
+      .apply .btn-apply {
+        background: #00c49a;
+        border: 1px solid #00c49a;
+        color: #0b2230;
+        font-weight: 700;
+      }
+      .apply .btn-apply:hover {
+        background: #00a37e;
+        border-color: #00a37e;
+      }
+
+      .about,
+      .openings,
+      .apply,
+      .equal-opportunity {
+        margin-bottom: 1.75rem;
+      }
+
+      /* Responsive layout */
+      @media (min-width: 992px) {
+        .career-grid {
+          display: grid;
+          grid-template-columns: 1fr 420px;
+          gap: 2rem;
+          align-items: start;
+        }
+      }
+
+      /* Mobile vertical centering for single job card area */
+      @media (max-width: 767.98px) {
+        .td-hero {
+          padding: 2.25rem 1rem;
+        }
+        .td-hero h1 {
+          font-size: 1.5rem;
+        }
+        .career-container {
+          padding: 1.5rem 1rem 3rem;
+        }
+        .card-career {
+          padding: 1rem;
+        }
+      }
+
+      /* Footer override small tweaks */
+      .site-footer .footer-content {
+        max-width: 720px;
+      }
+
+      :root {
+        --footer-bg: #f8f8f8;
+        --footer-text: #6c757d;
+        --footer-icon: #868e96;
+      }
+
+      .site-footer {
+        background-color: var(--footer-bg);
+        color: var(--footer-text);
+        padding: 2.5rem 0;
+      }
+
+      .footer-content {
+        max-width: 920px;
+        margin: 0 auto;
+      }
+
+      .social-icons {
+        margin-bottom: 0.75rem;
+      }
+
+      .social-link {
+        color: var(--footer-icon);
+        font-size: 1.6rem;
+        display: inline-block;
+        margin: 0 0.5rem;
+        transition: color 0.15s ease;
+      }
+
+      .social-link:hover {
+        color: #495057;
+        text-decoration: none;
+      }
+
+      .copyright-text,
+      .contact-info {
+        font-size: 0.95rem;
+        margin: 0.15rem 0;
+      }
+
+      .footer-link {
+        color: var(--footer-text);
+        text-decoration: none;
+      }
+      .footer-link:hover {
+        color: #495057;
+        text-decoration: underline;
+      }
+
+      .footer-link-underline {
+        color: var(--footer-text);
+        font-size: 0.95rem;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
+      .footer-link-underline:hover {
+        color: #495057;
+      }
+
+      @media (max-width: 575.98px) {
+        .site-footer {
+          padding: 2rem 0;
+        }
+        .social-link {
+          font-size: 1.4rem;
+          margin: 0 0.4rem;
+        }
+        .footer-content {
+          padding: 0 12px;
+        }
+      }

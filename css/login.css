@@ -1,0 +1,35 @@
+body, html {
+      height: 100%;
+      background-color: #f8f9fa !important;
+    }
+    .login-container {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      height: 100% !important;
+    }
+    .login-card {
+      width: 100% !important;
+      max-width: 400px !important;
+      padding: 2rem !important;
+      border: 1px solid #ddd !important;
+      border-radius: 10px !important;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1) !important;
+      background-color: #fff !important;
+    }
+
+    .text-center p {
+      color: #6c757d;
+    }
+
+    .footer-links {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .footer-links a {
+      color: #6c757d;
+      text-decoration: none;
+      font-size: 0.9rem;
+      margin: 0 10px;
+    }

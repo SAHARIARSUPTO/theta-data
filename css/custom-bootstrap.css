@@ -197,3 +197,7 @@ body {
 .btn-signup:hover {
   background-color: #009f7d;
 }
+
+.hidden {
+  display: none;
+}
