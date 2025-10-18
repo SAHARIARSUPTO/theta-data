@@ -20,6 +20,7 @@
     <link href="css/effects.css" rel="stylesheet" />
     <link href="css/pricing-table.css" rel="stylesheet" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link href="css/sections.css" rel="stylesheet" />
   </head>
   <body>
     <!-- Header -->
@@ -325,90 +326,6 @@
         </div>
       </div>
     </section>
-    <style>
-      .partner-logos h2 {
-        color: #888;
-        font-size: 1rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-      }
-
-      .logos-slider {
-        overflow: hidden;
-        padding: 20px 0;
-        background: transparent;
-        white-space: nowrap;
-        position: relative;
-      }
-
-      .logos-slider:before,
-      .logos-slider:after {
-        position: absolute;
-        top: 0;
-        width: 100px;
-        height: 100%;
-        content: "";
-        z-index: 2;
-      }
-
-      .logos-slider:before {
-        left: 0;
-        background: linear-gradient(
-          to left,
-          rgba(241, 243, 245, 0),
-          var(--td-bg)
-        );
-      }
-
-      .logos-slider:after {
-        right: 0;
-        background: linear-gradient(
-          to right,
-          rgba(241, 243, 245, 0),
-          var(--td-bg)
-        );
-      }
-      .logos-track {
-        display: inline-block;
-        animation: scroll 40s linear infinite;
-      }
-
-      .slide {
-        display: inline-block;
-        height: 50px;
-        width: 180px;
-        margin: 0 40px;
-      }
-
-      .logos-slider:hover .logos-track {
-        animation-play-state: paused;
-      }
-
-      .slide img {
-        height: 100%;
-        width: 100%;
-        object-fit: contain;
-        filter: grayscale(100%) brightness(0.5);
-        opacity: 0.8;
-        transition: all 0.1s ease;
-      }
-
-      .slide img:hover {
-        filter: grayscale(0) brightness(1);
-        opacity: 1;
-        transform: scale(1.1);
-      }
-
-      @keyframes scroll {
-        0% {
-          transform: translateX(0);
-        }
-        100% {
-          transform: translateX(calc(-180px * 8));
-        }
-      }
-    </style>
 
     <!-- Data Statistics Section -->
     <section class="data-statistics">
@@ -465,32 +382,8 @@
         </div>
       </div>
     </section>
-    <style>
-      .data-statistics {
-        padding: 60px 0;
-        background-color: #f8f9fa;
-      }
-      .stat-item {
-        text-align: center;
-        margin-bottom: 30px;
-      }
-      .stat-item .icon {
-        font-size: 40px;
-        color: #007bff;
-        margin-bottom: 15px;
-      }
-      .stat-item h3 {
-        font-size: 36px;
-        font-weight: 700;
-        margin-bottom: 10px;
-      }
-      .stat-item p {
-        font-size: 16px;
-        color: #6c757d;
-      }
-    </style>
 
-    <!-- Stocks Data Section -->
+    <!-- Stocks Data Section (static markup, replaced inline generator) -->
     <section id="stocks-pricing" class="stocks-data-pricing py-5 bg-light">
       <div
         class="container options-data-pricing"
@@ -500,10 +393,192 @@
           <h1 class="display-5 fw-bold">Stocks Data</h1>
           <p class="lead text-dark">Every trade. Every quote. Unfiltered.</p>
         </header>
+
         <div
           class="row pricing-row justify-content-center"
           id="stocks-pricing-cards"
-        ></div>
+        >
+          <!-- Free -->
+          <div
+            class="col-lg-3 col-md-6 col-12 mb-4 plan-column"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="plan-card p-4 d-flex flex-column">
+              <div>
+                <h3 class="plan-title text-center mb-4" data-plan-name="Free">
+                  <i class="plan-icon fas fa-gift"></i>
+                  Free
+                </h3>
+                <div class="plan-features">
+                  <a
+                    href="https://http-docs.thetadata.us/operations/get-v2-hist-stock-eod.html"
+                    class="feature-item d-flex align-items-center mb-2 text-decoration-none"
+                  >
+                    <span class="feature-tag badge bg-success me-2 text-white"
+                      >GET</span
+                    >
+                    <span class="feature-text">End of Day</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Value -->
+          <div
+            class="col-lg-3 col-md-6 col-12 mb-4 plan-column"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="plan-card p-4 d-flex flex-column">
+              <div>
+                <h3 class="plan-title text-center mb-4" data-plan-name="Value">
+                  <i class="plan-icon fas fa-chart-line"></i>
+                  Value
+                </h3>
+                <div class="plan-features">
+                  <a
+                    href="https://http-docs.thetadata.us/operations/get-v2-hist-stock-quote.html"
+                    class="feature-item d-flex align-items-center mb-2 text-decoration-none"
+                  >
+                    <span class="feature-tag badge bg-success me-2 text-white"
+                      >GET</span
+                    >
+                    <span class="feature-text">Quotes</span>
+                  </a>
+                  <a
+                    href="https://http-docs.thetadata.us/operations/get-v2-hist-stock-quote.html"
+                    class="feature-item d-flex align-items-center mb-2 text-decoration-none"
+                  >
+                    <span class="feature-tag badge bg-success me-2 text-white"
+                      >GET</span
+                    >
+                    <span class="feature-text">OHLC</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Standard -->
+          <div
+            class="col-lg-3 col-md-6 col-12 mb-4 plan-column"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="plan-card p-4 d-flex flex-column">
+              <div>
+                <h3
+                  class="plan-title text-center mb-4"
+                  data-plan-name="Standard"
+                >
+                  <i class="plan-icon fas fa-cogs"></i>
+                  Standard
+                  <small class="text-muted fw-normal">(includes value)</small>
+                </h3>
+                <div class="plan-features">
+                  <a
+                    href="https://http-docs.thetadata.us/operations/get-v2-hist-stock-split.html"
+                    class="feature-item d-flex align-items-center mb-2 text-decoration-none"
+                  >
+                    <span class="feature-tag badge bg-success me-2 text-white"
+                      >GET</span
+                    >
+                    <span class="feature-text">Splits</span>
+                  </a>
+                  <a
+                    href="https://http-docs.thetadata.us/operations/get-v2-hist-stock-trade.html"
+                    class="feature-item d-flex align-items-center mb-2 text-decoration-none"
+                  >
+                    <span class="feature-tag badge bg-success me-2 text-white"
+                      >GET</span
+                    >
+                    <span class="feature-text">Trades</span>
+                  </a>
+                  <a
+                    href="https://http-docs.thetadata.us/operations/get-get-v2-hist-stock-trade_quote.html"
+                    class="feature-item d-flex align-items-center mb-2 text-decoration-none"
+                  >
+                    <span class="feature-tag badge bg-success me-2 text-white"
+                      >GET</span
+                    >
+                    <span class="feature-text">Trade Quote</span>
+                  </a>
+                  <a
+                    href="https://http-docs.thetadata.us/operations/get-at_time-stock-trade.html"
+                    class="feature-item d-flex align-items-center mb-2 text-decoration-none"
+                  >
+                    <span class="feature-tag badge bg-success me-2 text-white"
+                      >GET</span
+                    >
+                    <span class="feature-text">Trade At Time</span>
+                  </a>
+                  <a
+                    href="https://http-docs.thetadata.us/operations/get-v2-hist-stock-dividend.html"
+                    class="feature-item d-flex align-items-center mb-2 text-decoration-none"
+                  >
+                    <span class="feature-tag badge bg-success me-2 text-white"
+                      >GET</span
+                    >
+                    <span class="feature-text">Dividends</span>
+                  </a>
+                  <a
+                    href="https://http-docs.thetadata.us/Streaming/US-Stocks/Quote-Stream.html"
+                    class="feature-item d-flex align-items-center mb-2 text-decoration-none"
+                  >
+                    <span class="feature-tag badge bg-warning me-2 text-dark"
+                      >STR</span
+                    >
+                    <span class="feature-text">Quote Stream</span>
+                  </a>
+                  <a
+                    href="https://http-docs.thetadata.us/Streaming/US-Stocks/Trade-Stream.html"
+                    class="feature-item d-flex align-items-center mb-2 text-decoration-none"
+                  >
+                    <span class="feature-tag badge bg-warning me-2 text-dark"
+                      >STR</span
+                    >
+                    <span class="feature-text">Trade Stream</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pro -->
+          <div
+            class="col-lg-3 col-md-6 col-12 mb-4 plan-column"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div class="plan-card p-4 d-flex flex-column">
+              <div>
+                <h3 class="plan-title text-center mb-4" data-plan-name="Pro">
+                  <i class="plan-icon fas fa-rocket"></i>
+                  Pro
+                  <small class="text-muted fw-normal"
+                    >(includes value & standard)</small
+                  >
+                </h3>
+                <div class="plan-features">
+                  <a
+                    href="https://http-docs.thetadata.us/Streaming/US-Stocks/Full-Trade-Stream.html"
+                    class="feature-item d-flex align-items-center mb-2 text-decoration-none"
+                  >
+                    <span class="feature-tag badge bg-warning me-2 text-dark"
+                      >STR</span
+                    >
+                    <span class="feature-text"
+                      >Every US Stock Trade Stream</span
+                    >
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="300">
           <a
             href="pages/pricing-all.html"
@@ -513,119 +588,318 @@
         </div>
       </div>
     </section>
-    <script>
-      const stocks_pricing_data = {
-        Free: {
-          "End of Day":
-            "https://http-docs.thetadata.us/operations/get-v2-hist-stock-eod.html",
-        },
-        Value: {
-          Quotes:
-            "https://http-docs.thetadata.us/operations/get-v2-hist-stock-quote.html",
-          OHLC: "https://http-docs.thetadata.us/operations/get-v2-hist-stock-quote.html",
-        },
-        Standard: {
-          Splits:
-            "https://http-docs.thetadata.us/operations/get-v2-hist-stock-split.html",
-          Trades:
-            "https://http-docs.thetadata.us/operations/get-v2-hist-stock-trade.html",
-          "Trade Quote":
-            "https://http-docs.thetadata.us/operations/get-get-v2-hist-stock-trade_quote.html",
-          "Trade At Time":
-            "https://http-docs.thetadata.us/operations/get-at_time-stock-trade.html",
-          Dividends:
-            "https://http-docs.thetadata.us/operations/get-v2-hist-stock-dividend.html",
-          "Quote Stream":
-            "https://http-docs.thetadata.us/Streaming/US-Stocks/Quote-Stream.html",
-          "Trade Stream":
-            "https://http-docs.thetadata.us/Streaming/US-Stocks/Trade-Stream.html",
-        },
-        Pro: {
-          "Every US Stock Trade Stream":
-            "https://http-docs.thetadata.us/Streaming/US-Stocks/Full-Trade-Stream.html",
-        },
-      };
 
-      function render_stock_feature_item(text, link, plan) {
-        let tag = "GET";
-        if (
-          (plan === "Standard" && text.includes("Stream")) ||
-          plan === "Pro"
-        ) {
-          tag = "STR";
-        }
-
-        const tag_class = tag === "STR" ? "bg-warning" : "bg-success";
-        const text_color_class = tag === "STR" ? "text-dark" : "text-white";
-
-        return `
-      <a href="${link}" class="feature-item d-flex align-items-center mb-2 text-decoration-none">
-          <span class="feature-tag badge ${tag_class} me-2 ${text_color_class}">${tag}</span>
-          <span class="feature-text">${text}</span>
-      </a>`;
-      }
-
-      const stocks_cards_container = document.getElementById(
-        "stocks-pricing-cards"
-      );
-      let i = 0;
-      for (const plan in stocks_pricing_data) {
-        i++;
-        let header_text = plan;
-        if (plan === "Standard") {
-          header_text =
-            'Standard <small class="text-muted fw-normal">(includes value)</small>';
-        } else if (plan === "Pro") {
-          header_text =
-            'Pro <small class="text-muted fw-normal">(includes value & standard)</small>';
-        }
-
-        let plan_icon = "fa-gift";
-        if (plan === "Value") {
-          plan_icon = "fa-chart-line";
-        } else if (plan === "Standard") {
-          plan_icon = "fa-cogs";
-        } else if (plan === "Pro") {
-          plan_icon = "fa-rocket";
-        }
-
-        let features_html = "";
-        for (const feature in stocks_pricing_data[plan]) {
-          features_html += render_stock_feature_item(
-            feature,
-            stocks_pricing_data[plan][feature],
-            plan
-          );
-        }
-
-        stocks_cards_container.innerHTML += `
-          <div class="col-lg-3 col-md-6 col-12 mb-4 plan-column" data-aos="fade-up" data-aos-delay="${
-            i * 100
-          }">
-              <div class="plan-card p-4 d-flex flex-column">
-                  <div>
-                      <h3 class="plan-title text-center mb-4" data-plan-name="${plan}">
-                          <i class="plan-icon fas ${plan_icon}"></i>
-                          ${header_text}
-                      </h3>
-                      <div class="plan-features">
-                          ${features_html}
-                      </div>
-                  </div>
-              </div>
-          </div>
-      `;
-      }
-    </script>
-
-    <!-- Options Data Section -->
+    <!-- Options Data Section (static markup, replaced inline generator) -->
     <section id="options-pricing" class="options-data-pricing">
       <div class="container">
         <header class="text-center mb-5 options-header" data-aos="fade-up">
           <h1 class="display-5 fw-bold">Options Data</h1>
           <p class="lead">All Exchanges. Complex Greeks. Low Latency.</p>
         </header>
-        <div class="row pricing-row" id="options-pricing-cards"></div>
+
+        <div class="row pricing-row" id="options-pricing-cards">
+          <!-- Free -->
+          <div
+            class="col-lg-3 col-md-6 col-12 mb-4 plan-column"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="plan-card p-4">
+              <h3
+                class="plan-title text-center mb-4 fw-bold"
+                data-plan-name="Free"
+              >
+                <i class="plan-icon fas fa-gift"></i>
+                Free
+              </h3>
+              <div class="plan-features">
+                <a
+                  href="#https://http-docs.thetadata.us/operations/hist-option-eod.html"
+                  class="feature-item d-flex align-items-center mb-2 text-decoration-none"
+                >
+                  <span class="feature-tag badge bg-success me-2 text-white"
+                    >GET</span
+                  >
+                  <span class="feature-text">End of Day</span>
+                </a>
+                <a
+                  href="https://http-docs.thetadata.us/operations/get-v2-list-roots.html"
+                  class="feature-item d-flex align-items-center mb-2 text-decoration-none"
+                >
+                  <span class="feature-tag badge bg-success me-2 text-white"
+                    >GET</span
+                  >
+                  <span class="feature-text">List All Tickers</span>
+                </a>
+                <a
+                  href="https://http-docs.thetadata.us/operations/get-v2-list-expirations.html"
+                  class="feature-item d-flex align-items-center mb-2 text-decoration-none"
+                >
+                  <span class="feature-tag badge bg-success me-2 text-white"
+                    >GET</span
+                  >
+                  <span class="feature-text">List All Expirations</span>
+                </a>
+                <a
+                  href="https://http-docs.thetadata.us/operations/get-v2-list-strikes.html"
+                  class="feature-item d-flex align-items-center mb-2 text-decoration-none"
+                >
+                  <span class="feature-tag badge bg-success me-2 text-white"
+                    >GET</span
+                  >
+                  <span class="feature-text">List All Strikes</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Value -->
+          <div
+            class="col-lg-3 col-md-6 col-12 mb-4 plan-column"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="plan-card p-4">
+              <h3
+                class="plan-title text-center mb-4 fw-bold"
+                data-plan-name="Value"
+              >
+                <i class="plan-icon fas fa-chart-line"></i>
+                Value
+              </h3>
+              <div class="plan-features">
+                <a
+                  href="https://http-docs.thetadata.us/operations/get-hist-option-quote.html"
+                  class="feature-item d-flex align-items-center mb-2 text-decoration-none"
+                >
+                  <span class="feature-tag badge bg-success me-2 text-white"
+                    >GET</span
+                  >
+                  <span class="feature-text">Quote</span>
+                </a>
+                <a
+                  href="https://http-docs.thetadata.us/operations/get-hist-option-open_interest.html"
+                  class="feature-item d-flex align-items-center mb-2 text-decoration-none"
+                >
+                  <span class="feature-tag badge bg-success me-2 text-white"
+                    >GET</span
+                  >
+                  <span class="feature-text">Open Interest</span>
+                </a>
+                <a
+                  href="https://http-docs.thetadata.us/operations/get-snapshot-option-quote.html"
+                  class="feature-item d-flex align-items-center mb-2 text-decoration-none"
+                >
+                  <span class="feature-tag badge bg-success me-2 text-white"
+                    >GET</span
+                  >
+                  <span class="feature-text">Quote Snapshot</span>
+                </a>
+                <a
+                  href="https://http-docs.thetadata.us/operations/get-snapshot-option-open_interest.html"
+                  class="feature-item d-flex align-items-center mb-2 text-decoration-none"
+                >
+                  <span class="feature-tag badge bg-success me-2 text-white"
+                    >GET</span
+                  >
+                  <span class="feature-text">Open Interest Snapshot</span>
+                </a>
+                <a
+                  href="https://http-docs.thetadata.us/operations/get-snapshot-option-ohlc.html"
+                  class="feature-item d-flex align-items-center mb-2 text-decoration-none"
+                >
+                  <span class="feature-tag badge bg-success me-2 text-white"
+                    >GET</span
+                  >
+                  <span class="feature-text">OHLC Snapshot</span>
+                </a>
+                <a
+                  href="https://http-docs.thetadata.us/operations/get-at_time-option-quote.html"
+                  class="feature-item d-flex align-items-center mb-2 text-decoration-none"
+                >
+                  <span class="feature-tag badge bg-success me-2 text-white"
+                    >GET</span
+                  >
+                  <span class="feature-text">Quote At Time</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Standard -->
+          <div
+            class="col-lg-3 col-md-6 col-12 mb-4 plan-column"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="plan-card p-4">
+              <h3
+                class="plan-title text-center mb-4 fw-bold"
+                data-plan-name="Standard"
+              >
+                <i class="plan-icon fas fa-cogs"></i>
+                Standard <small>(includes value)</small>
+              </h3>
+              <div class="plan-features">
+                <a
+                  href="https://http-docs.thetadata.us/operations/get-hist-option-trade.html"
+                  class="feature-item d-flex align-items-center mb-2 text-decoration-none"
+                >
+                  <span class="feature-tag badge bg-success me-2 text-white"
+                    >GET</span
+                  >
+                  <span class="feature-text">Trade</span>
+                </a>
+                <a
+                  href="https://http-docs.thetadata.us/operations/get-hist-option-trade_quote.html"
+                  class="feature-item d-flex align-items-center mb-2 text-decoration-none"
+                >
+                  <span class="feature-tag badge bg-success me-2 text-white"
+                    >GET</span
+                  >
+                  <span class="feature-text">Trade Quote</span>
+                </a>
+                <a
+                  href="https://http-docs.thetadata.us/operations/get-hist-option-greeks.html"
+                  class="feature-item d-flex align-items-center mb-2 text-decoration-none"
+                >
+                  <span class="feature-tag badge bg-success me-2 text-white"
+                    >GET</span
+                  >
+                  <span class="feature-text">Greeks</span>
+                </a>
+                <a
+                  href="https://http-docs.thetadata.us/operations/get-hist-option-implied_volatility.html"
+                  class="feature-item d-flex align-items-center mb-2 text-decoration-none"
+                >
+                  <span class="feature-tag badge bg-success me-2 text-white"
+                    >GET</span
+                  >
+                  <span class="feature-text">Implied Volatility</span>
+                </a>
+                <a
+                  href="https://http-docs.thetadata.us/operations/get-snapshot-option-trade.html"
+                  class="feature-item d-flex align-items-center mb-2 text-decoration-none"
+                >
+                  <span class="feature-tag badge bg-success me-2 text-white"
+                    >GET</span
+                  >
+                  <span class="feature-text">Trade Snapshot</span>
+                </a>
+                <a
+                  href="https://http-docs.thetadata.us/operations/get-at_time-option-trade.html"
+                  class="feature-item d-flex align-items-center mb-2 text-decoration-none"
+                >
+                  <span class="feature-tag badge bg-success me-2 text-white"
+                    >GET</span
+                  >
+                  <span class="feature-text">Trade At Time</span>
+                </a>
+                <a
+                  href="https://http-docs.thetadata.us/Streaming/US-Options/Quote-Stream.html"
+                  class="feature-item d-flex align-items-center mb-2 text-decoration-none"
+                >
+                  <span class="feature-tag badge bg-warning me-2 text-dark"
+                    >STR</span
+                  >
+                  <span class="feature-text">Quote Stream</span>
+                </a>
+                <a
+                  href="https://http-docs.thetadata.us/Streaming/US-Options/Trade-Stream.html"
+                  class="feature-item d-flex align-items-center mb-2 text-decoration-none"
+                >
+                  <span class="feature-tag badge bg-warning me-2 text-dark"
+                    >STR</span
+                  >
+                  <span class="feature-text">Trade Stream</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pro -->
+          <div
+            class="col-lg-3 col-md-6 col-12 mb-4 plan-column"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div class="plan-card p-4">
+              <h3
+                class="plan-title text-center mb-4 fw-bold"
+                data-plan-name="Pro"
+              >
+                <i class="plan-icon fas fa-rocket"></i>
+                Pro <small>(includes value & standard)</small>
+              </h3>
+              <div class="plan-features">
+                <a
+                  href="https://http-docs.thetadata.us/operations/get-hist-option-greeks_second_order.html"
+                  class="feature-item d-flex align-items-center mb-2 text-decoration-none"
+                >
+                  <span class="feature-tag badge bg-success me-2 text-white"
+                    >GET</span
+                  >
+                  <span class="feature-text">Second Order Greeks</span>
+                </a>
+                <a
+                  href="https://http-docs.thetadata.us/operations/get-hist-option-greeks_third_order.html"
+                  class="feature-item d-flex align-items-center mb-2 text-decoration-none"
+                >
+                  <span class="feature-tag badge bg-success me-2 text-white"
+                    >GET</span
+                  >
+                  <span class="feature-text">Third Order Greeks</span>
+                </a>
+                <a
+                  href="https://http-docs.thetadata.us/operations/get-hist-option-trade_greeks.html"
+                  class="feature-item d-flex align-items-center mb-2 text-decoration-none"
+                >
+                  <span class="feature-tag badge bg-success me-2 text-white"
+                    >GET</span
+                  >
+                  <span class="feature-text">Trade Greeks</span>
+                </a>
+                <a
+                  href="https://http-docs.thetadata.us/operations/get-hist-option-trade_greeks_second_order.html"
+                  class="feature-item d-flex align-items-center mb-2 text-decoration-none"
+                >
+                  <span class="feature-tag badge bg-success me-2 text-white"
+                    >GET</span
+                  >
+                  <span class="feature-text">Trade Greeks 2nd Order</span>
+                </a>
+                <a
+                  href="https://http-docs.thetadata.us/operations/get-hist-option-trade_greeks_second_order.html"
+                  class="feature-item d-flex align-items-center mb-2 text-decoration-none"
+                >
+                  <span class="feature-tag badge bg-success me-2 text-white"
+                    >GET</span
+                  >
+                  <span class="feature-text">Trade Greeks 3rd Order</span>
+                </a>
+                <a
+                  href="https://http-docs.thetadata.us/operations/get-hist-option-all_greeks.html"
+                  class="feature-item d-flex align-items-center mb-2 text-decoration-none"
+                >
+                  <span class="feature-tag badge bg-success me-2 text-white"
+                    >GET</span
+                  >
+                  <span class="feature-text">All Greeks</span>
+                </a>
+                <a
+                  href="https://http-docs.thetadata.us/Streaming/US-Options/Full-Trade-Stream.html"
+                  class="feature-item d-flex align-items-center mb-2 text-decoration-none"
+                >
+                  <span class="feature-tag badge bg-warning me-2 text-dark"
+                    >STR</span
+                  >
+                  <span class="feature-text">Full Trade Stream</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="500">
           <a
             href="pages/pricing-all.html"
@@ -635,136 +909,8 @@
         </div>
       </div>
     </section>
-    <script>
-      const options_pricing_data = {
-        Free: {
-          "End of Day":
-            "#link-eodhttps://http-docs.thetadata.us/operations/hist-option-eod.html",
-          "List All Tickers":
-            "https://http-docs.thetadata.us/operations/get-v2-list-roots.html",
-          "List All Expirations":
-            "https://http-docs.thetadata.us/operations/get-v2-list-expirations.html",
-          "List All Strikes":
-            "https://http-docs.thetadata.us/operations/get-v2-list-strikes.html",
-        },
-        Value: {
-          Quote:
-            "https://http-docs.thetadata.us/operations/get-hist-option-quote.html",
-          "Open Interest":
-            "https://http-docs.thetadata.us/operations/get-hist-option-open_interest.html",
-          "Quote Snapshot":
-            "https://http-docs.thetadata.us/operations/get-snapshot-option-quote.html",
-          "Open Interest Snapshot":
-            "https://http-docs.thetadata.us/operations/get-snapshot-option-open_interest.html",
-          "OHLC Snapshot":
-            "https://http-docs.thetadata.us/operations/get-snapshot-option-ohlc.html",
-          "Quote At Time":
-            "https://http-docs.thetadata.us/operations/get-at_time-option-quote.html",
-        },
-        Standard: {
-          Trade:
-            "https://http-docs.thetadata.us/operations/get-hist-option-trade.html",
-          "Trade Quote":
-            "https://http-docs.thetadata.us/operations/get-hist-option-trade_quote.html",
-          Greeks:
-            "https://http-docs.thetadata.us/operations/get-hist-option-greeks.html",
-          "Implied Volatility":
-            "https://http-docs.thetadata.us/operations/get-hist-option-implied_volatility.html",
-          "Trade Snapshot":
-            "https://http-docs.thetadata.us/operations/get-snapshot-option-trade.html",
-          "Trade At Time":
-            "https://http-docs.thetadata.us/operations/get-at_time-option-trade.html",
-          "Quote Stream":
-            "https://http-docs.thetadata.us/Streaming/US-Options/Quote-Stream.html",
-          "Trade Stream":
-            "https://http-docs.thetadata.us/Streaming/US-Options/Trade-Stream.html",
-        },
-        Pro: {
-          "Second Order Greeks":
-            "https://http-docs.thetadata.us/operations/get-hist-option-greeks_second_order.html",
-          "Third Order Greeks":
-            "https://http-docs.thetadata.us/operations/get-hist-option-greeks_third_order.html",
-          "Trade Greeks":
-            "https://http-docs.thetadata.us/operations/get-hist-option-trade_greeks.html",
-          "Trade Greeks 2nd Order":
-            "https://http-docs.thetadata.us/operations/get-hist-option-trade_greeks_second_order.html",
-          "Trade Greeks 3rd Order":
-            "https://http-docs.thetadata.us/operations/get-hist-option-trade_greeks_second_order.html",
-          "All Greeks":
-            "https://http-docs.thetadata.us/operations/get-hist-option-all_greeks.html",
-          "Full Trade Stream":
-            "https://http-docs.thetadata.us/Streaming/US-Options/Full-Trade-Stream.html",
-        },
-      };
 
-      function render_feature_item(text, link, plan) {
-        let tag = "GET";
-        if (
-          (plan === "Standard" || plan === "Pro") &&
-          text.includes("Stream")
-        ) {
-          tag = "STR";
-        }
-
-        const tag_class = tag === "STR" ? "bg-warning" : "bg-success";
-
-        return `
-        <a href="${link}" class="feature-item d-flex align-items-center mb-2 text-decoration-none">
-            <span class="feature-tag badge ${tag_class} me-2">${tag}</span>
-            <span class="feature-text">${text}</span>
-        </a>`;
-      }
-
-      const options_cards_container = document.getElementById(
-        "options-pricing-cards"
-      );
-      let j = 0;
-      for (const plan in options_pricing_data) {
-        j++;
-        let header_text = plan;
-        if (plan === "Standard") {
-          header_text = "Standard <small>(includes value)</small>";
-        } else if (plan === "Pro") {
-          header_text = "Pro <small>(includes value & standard)</small>";
-        }
-
-        let plan_icon = "fa-gift";
-        if (plan === "Value") {
-          plan_icon = "fa-chart-line";
-        } else if (plan === "Standard") {
-          plan_icon = "fa-cogs";
-        } else if (plan === "Pro") {
-          plan_icon = "fa-rocket";
-        }
-
-        let features_html = "";
-        for (const feature in options_pricing_data[plan]) {
-          features_html += render_feature_item(
-            feature,
-            options_pricing_data[plan][feature],
-            plan
-          );
-        }
-
-        options_cards_container.innerHTML += `
-            <div class="col-lg-3 col-md-6 col-12 mb-4 plan-column" data-aos="fade-up" data-aos-delay="${
-              j * 100
-            }">
-                <div class="plan-card p-4">
-                    <h3 class="plan-title text-center mb-4 fw-bold" data-plan-name="${plan}">
-                        <i class="plan-icon fas ${plan_icon}"></i>
-                        ${header_text}
-                    </h3>
-                    <div class="plan-features">
-                        ${features_html}
-                    </div>
-                </div>
-            </div>
-        `;
-      }
-    </script>
-
-    <!-- Indices Data Section -->
+    <!-- Indices Data Section (static markup, replaced inline generator) -->
     <section id="indices-pricing" class="indices-data-pricing py-5 bg-white">
       <div
         class="container options-data-pricing"
@@ -774,10 +920,124 @@
           <h1 class="display-5 fw-bold mb-2">Indices Data</h1>
           <p class="lead text-dark">Every Tick. Every Move. Real-Time.</p>
         </header>
+
         <div
           class="row pricing-row justify-content-center"
           id="indices-pricing-cards"
-        ></div>
+        >
+          <div
+            class="col-lg-3 col-md-6 col-12 mb-4 plan-column"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="plan-card p-4 d-flex flex-column">
+              <div>
+                <h3 class="plan-title text-center mb-4" data-plan-name="Value">
+                  <i class="plan-icon fas fa-chart-line"></i>
+                  Value
+                </h3>
+                <div class="plan-features">
+                  <a
+                    href="/pricing-all.htmlhttps://http-docs.thetadata.us/operations/get-v2-hist-index-price.html"
+                    class="feature-item d-flex align-items-center mb-2 text-decoration-none"
+                  >
+                    <span class="feature-tag badge bg-success me-2 text-white"
+                      >GET</span
+                    >
+                    <span class="feature-text">Price</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-3 col-md-6 col-12 mb-4 plan-column"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="plan-card p-4 d-flex flex-column">
+              <div>
+                <h3
+                  class="plan-title text-center mb-4"
+                  data-plan-name="Standard"
+                >
+                  <i class="plan-icon fas fa-cogs"></i>
+                  Standard
+                  <small class="text-muted fw-normal">(includes value)</small>
+                </h3>
+                <div class="plan-features">
+                  <a
+                    href="https://http-docs.thetadata.us/operations/get-v2-hist-index-snapshot-price.html"
+                    class="feature-item d-flex align-items-center mb-2 text-decoration-none"
+                  >
+                    <span class="feature-tag badge bg-success me-2 text-white"
+                      >GET</span
+                    >
+                    <span class="feature-text">Price Snapshot</span>
+                  </a>
+                  <a
+                    href="https://http-docs.thetadata.us/operations/get-v2-hist-index-snapshot-ohlc.html"
+                    class="feature-item d-flex align-items-center mb-2 text-decoration-none"
+                  >
+                    <span class="feature-tag badge bg-success me-2 text-white"
+                      >GET</span
+                    >
+                    <span class="feature-text">OHLC Snapshot</span>
+                  </a>
+                  <a
+                    href="https://http-docs.thetadata.us/operations/get-v2-hist-index-ohlc.html"
+                    class="feature-item d-flex align-items-center mb-2 text-decoration-none"
+                  >
+                    <span class="feature-tag badge bg-success me-2 text-white"
+                      >GET</span
+                    >
+                    <span class="feature-text">OHLC</span>
+                  </a>
+                  <a
+                    href="https://http-docs.thetadata.us/Streaming/US-Indices/Price-Stream.html"
+                    class="feature-item d-flex align-items-center mb-2 text-decoration-none"
+                  >
+                    <span class="feature-tag badge bg-warning me-2 text-dark"
+                      >STR</span
+                    >
+                    <span class="feature-text">Price Stream</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-3 col-md-6 col-12 mb-4 plan-column"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="plan-card p-4 d-flex flex-column">
+              <div>
+                <h3 class="plan-title text-center mb-4" data-plan-name="Pro">
+                  <i class="plan-icon fas fa-rocket"></i>
+                  Pro
+                  <small class="text-muted fw-normal"
+                    >(includes value & standard)</small
+                  >
+                </h3>
+                <div class="plan-features">
+                  <a
+                    href="https://http-docs.thetadata.us/Articles/Getting-Started/Subscriptions.html#index-data"
+                    class="feature-item d-flex align-items-center mb-2 text-decoration-none"
+                  >
+                    <span class="feature-tag badge bg-success me-2 text-white"
+                      >GET</span
+                    >
+                    <span class="feature-text">History</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="300">
           <a
             href="pages/pricing-all.html"
@@ -787,102 +1047,6 @@
         </div>
       </div>
     </section>
-    <script>
-      const indices_pricing_data = {
-        Value: {
-          Price:
-            "/pricing-all.htmlhttps://http-docs.thetadata.us/operations/get-v2-hist-index-price.html",
-        },
-        Standard: {
-          "Price Snapshot":
-            "https://http-docs.thetadata.us/operations/get-v2-hist-index-snapshot-price.html",
-          "OHLC Snapshot":
-            "https://http-docs.thetadata.us/operations/get-v2-hist-index-snapshot-ohlc.html",
-          OHLC: "https://http-docs.thetadata.us/operations/get-v2-hist-index-ohlc.html",
-          "Price Stream":
-            "https://http-docs.thetadata.us/Streaming/US-Indices/Price-Stream.html",
-        },
-        Pro: {
-          History:
-            "https://http-docs.thetadata.us/Articles/Getting-Started/Subscriptions.html#index-data",
-        },
-      };
-
-      function render_indices_feature_item(text, link, plan) {
-        let tag = "GET";
-        if (text.includes("Stream")) {
-          tag = "STR";
-        }
-
-        const tag_class = tag === "STR" ? "bg-warning" : "bg-success";
-        const text_color_class = tag === "STR" ? "text-dark" : "text-white";
-
-        return `
-        <a href="${link}" class="feature-item d-flex align-items-center mb-2 text-decoration-none">
-            <span class="feature-tag badge ${tag_class} me-2 ${text_color_class}">${tag}</span>
-            <span class="feature-text">${text}</span>
-        </a>`;
-      }
-
-      const indices_cards_container = document.getElementById(
-        "indices-pricing-cards"
-      );
-      let k = 0;
-      for (const plan in indices_pricing_data) {
-        k++;
-        let header_text = plan;
-        if (plan === "Standard") {
-          header_text =
-            'Standard <small class="text-muted fw-normal">(includes value)</small>';
-        } else if (plan === "Pro") {
-          header_text =
-            'Pro <small class="text-muted fw-normal">(includes value & standard)</small>';
-        }
-
-        let plan_icon = "fa-gift";
-        if (plan === "Value") {
-          plan_icon = "fa-chart-line";
-        } else if (plan === "Standard") {
-          plan_icon = "fa-cogs";
-        } else if (plan === "Pro") {
-          plan_icon = "fa-rocket";
-        }
-
-        let features_html = "";
-        for (const feature in indices_pricing_data[plan]) {
-          features_html += render_indices_feature_item(
-            feature,
-            indices_pricing_data[plan][feature],
-            plan
-          );
-        }
-
-        indices_cards_container.innerHTML += `
-            <div class="col-lg-3 col-md-6 col-12 mb-4 plan-column" data-aos="fade-up" data-aos-delay="${
-              k * 100
-            }">
-                <div class="plan-card p-4 d-flex flex-column">
-                    <div>
-                        <h3 class="plan-title text-center mb-4" data-plan-name="${plan}">
-                            <i class="plan-icon fas ${plan_icon}"></i>
-                            ${header_text}
-                        </h3>
-                        <div class="plan-features">
-                            ${features_html}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        `;
-      }
-    </script>
-    <style>
-      .new-badge {
-        font-size: 0.75rem;
-        padding: 0.3em 0.6em;
-        vertical-align: middle;
-      }
-    </style>
 
     <!-- Footer -->
     <footer class="site-footer py-5">
@@ -1036,18 +1200,7 @@
     </style>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-      (function () {
-        const el = document.getElementById("footer-year");
-        if (el) el.textContent = new Date().getFullYear();
-      })();
-    </script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      AOS.init({
-        once: true,
-        duration: 600,
-      });
-    </script>
+    <script src="js/site-init.js"></script>
   </body>
 </html>

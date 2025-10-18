@@ -1,0 +1,108 @@
+/* Partner logos + data statistics + small helpers (moved from inline <style>) */
+
+.partner-logos h2 {
+  color: #888;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.logos-slider {
+  overflow: hidden;
+  padding: 20px 0;
+  background: transparent;
+  white-space: nowrap;
+  position: relative;
+}
+
+.logos-slider:before,
+.logos-slider:after {
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+
+.logos-slider:before {
+  left: 0;
+  background: linear-gradient(to left, rgba(241, 243, 245, 0), var(--td-bg));
+}
+
+.logos-slider:after {
+  right: 0;
+  background: linear-gradient(to right, rgba(241, 243, 245, 0), var(--td-bg));
+}
+
+.logos-track {
+  display: inline-block;
+  animation: scroll 40s linear infinite;
+}
+
+.slide {
+  display: inline-block;
+  height: 50px;
+  width: 180px;
+  margin: 0 40px;
+}
+
+.logos-slider:hover .logos-track {
+  animation-play-state: paused;
+}
+
+.slide img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  filter: grayscale(100%) brightness(0.5);
+  opacity: 0.8;
+  transition: all 0.1s ease;
+}
+
+.slide img:hover {
+  filter: grayscale(0) brightness(1);
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-180px * 8));
+  }
+}
+
+/* Data statistics */
+.data-statistics {
+  padding: 60px 0;
+  background-color: #f8f9fa;
+}
+.stat-item {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.stat-item .icon {
+  font-size: 40px;
+  color: #007bff;
+  margin-bottom: 15px;
+}
+.stat-item h3 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.stat-item p {
+  font-size: 16px;
+  color: #6c757d;
+}
+
+/* small helpers */
+.new-badge {
+  font-size: 0.75rem;
+  padding: 0.3em 0.6em;
+  vertical-align: middle;
+}
